@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color:gray">
+
+    <a-camera wasd-controls-enabled="true" position="0 8 20"></a-camera>
+
+    <!-------------------------------------------Asset Management------------------------------------------->
+    <a-assets>      
+      <a-assets-item id="car-obj" src="tinker.obj"></a-assets-item>
+      <a-assets-item id="car-mtl" src="obj.mtl"></a-assets-item>
+     
+
+    </a-assets>
+    
+    
+    <!--------------------------------------OBJ Models----------------------------------------------------------->   
+  
+    <a-entity obj-model="obj:#car-obj;mtl:#car-mtl" 
+              src="./80-futuristic_car_2.0_cgtrader_obj/textures/Futuristic_Car_S.gltf"
+              position="0 0 0" 
+              rotation="0 25 0" 
+              scale="2 2 2" 
+              move-on-click
+              ></a-entity>
+
+
+    
+    <!-------------------------------------Circular Plane----------------------------------------------->
+    
+    <a-circle id="floor" position="-0.4 -0.76 -25" rotation="-90 0 0" radius="100" shadow="receive: true" visible="true"
+      color="white">
+    </a-circle>
+    
+  
+    <!-------------------------------------Room Walls----------------------------------------------->
+    <a-entity >
+
+      <!--BACK-->
+      <a-box color="blue" position="0.076 -4 -39" width="50" height="50">
+      </a-box>
+      <!--RIGHT-->
+      <a-box color="orange" rotation="0 -90 0" position="25.5 -2.9 -15" width="50" height="50">
+      </a-box>
+      <!--LEFT-->
+      <a-box color="orange" rotation="0 -90 0" position="-25.9 -3.4 -15" width="50" height="50">
+      </a-box>
+      <!--TOP-->
+      <a-box color="white" rotation="90 0 0" position="0 21.4 -15" width="50" height="50">
+      </a-box>
+
+    </a-entity>
+    
+  </a-scene>
+</body>
+
+</html>
